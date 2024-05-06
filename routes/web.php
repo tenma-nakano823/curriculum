@@ -26,3 +26,5 @@ Route::get('/',function () {
     return view('posts.index');
 });
 */
+Route::get('/posts/{post}', [PostController::class, 'show']);
+//'/posts/{対象データのID}'にGetリクエストが来たら, PostControllerメソッドのshowメソッドを実行する.
