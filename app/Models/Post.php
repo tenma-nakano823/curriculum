@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
@@ -12,6 +13,8 @@ class Post extends Model
         'body',
     ];
     use HasFactory;
+    use SoftDeletes;
+    
     
     /*
     public function getByLimit(int $limit_count = 3)
