@@ -28,6 +28,9 @@
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
+        <div class="footer">
+            <a href="/">戻る</a>
+        </div>
     <script>
         function deletePost(id) {
             'use strict'

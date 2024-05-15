@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 //use宣言は外部にあるクラスをPostController内にインポートできる。
 //この場合、App\Models内のPostクラスをインポートしている。
 use App\Models\Post;
+use App\Models\Category;
 use App\Http\Requests\PostRequest; //useする
 /**
  * Post一覧を表示する
@@ -39,10 +40,10 @@ class PostController extends Controller
          
      }
      
-     public function create()
-    {
-        return view('posts.create');
-    }
+     public function create(Category $category)
+     {
+         return view('posts.create')->with(['categories' => $category->get()]);
+     }
     
     public function store(Post $post, PostRequest $request)
     {

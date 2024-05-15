@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;  //外部にあるPostControllerクラスをインポート。
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ Route::get('/', function () {
 */
 
 Route::get('/', [PostController::class, 'index']);  
+Route::get('/categories/{category}', [CategoryController::class,'index']);
 /*
 Route::get('/',function () {
     return view('posts.index');
