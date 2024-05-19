@@ -9,6 +9,7 @@
     <x-app-layout>
         <x-slot name="header">Index</x-slot>
         <body>
+            <!--
             <h1>Blog Name!</h1>
             <a href='/posts/create'>[create]</a>
             <div class='posts'>
@@ -26,6 +27,17 @@
                         </form>
                         <br/>
                     </div>
+                @endforeach
+            </div>
+            -->
+            <div>
+                @foreach ($questions as $question)
+                    <div>
+                        <a href="https://teratail.com/questions/{{ $question['id'] }}">
+                            {{ $question['title'] }}
+                        </a>
+                    </div>
+                    <br/>
                 @endforeach
             </div>
             <div class='paginate'>
